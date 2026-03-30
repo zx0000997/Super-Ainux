@@ -50,3 +50,5 @@ Ultimately, existing operating systems are designed for human users rather than 
 ## M0 engineering (baseline host & secrets)
 
 Implementation for milestone **M0** (Linux baseline, single-node Podman Compose, split secrets/config): see [`m0/README.md`](m0/README.md) and the walkthrough [`docs/M0_DEPLOYMENT.zh.md`](docs/M0_DEPLOYMENT.zh.md).
+
+**M1** (task state machine API, append-only audit with hash chain, stub Operator/Supervisor): [`m1/README.md`](m1/README.md), [`docs/M1_API.zh.md`](docs/M1_API.zh.md).

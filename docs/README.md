@@ -11,3 +11,4 @@ Kernel / OS baseline (Linux build checklist): see [`../OS_DEVELOPMENT_GUIDE.md`]
 | Milestone | Document |
 |-----------|----------|
 | **M0** (baseline host, Compose, secrets) | [M0_DEPLOYMENT.zh.md](./M0_DEPLOYMENT.zh.md) — 部署与验收；实现目录 [`../m0/`](../m0/) |
+| **M1** (task FSM, audit chain, stub adapters) | [M1_API.zh.md](./M1_API.zh.md) — API 说明；实现目录 [`../m1/`](../m1/) |

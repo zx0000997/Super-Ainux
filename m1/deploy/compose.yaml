@@ -1,0 +1,20 @@
+# SAS M1 API — task FSM + audit + stub adapters.
+# From repo: m1/deploy — podman compose -f compose.yaml up -d --build
+
+services:
+  sas-m1-api:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: localhost/sas-m1-api:latest
+    container_name: sas-m1-api
+    ports:
+      - "127.0.0.1:18081:8080"
+    volumes:
+      - sas-m1-data:/data
+    environment:
+      SAS_M1_DATABASE_URL: sqlite:////data/sas_m1.db
+    restart: unless-stopped
+
+volumes:
+  sas-m1-data:
