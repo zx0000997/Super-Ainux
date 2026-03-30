@@ -1,0 +1,23 @@
+# M0 default input policy: drop, allow loopback, established, SSH.
+# Adjust interface or add rules when SAS API/dashboard ports are defined (M4+).
+
+flush ruleset
+
+table inet sas_m0 {
+  chain input {
+    type filter hook input priority filter; policy drop;
+    ct state established,related accept
+    iif lo accept
+    tcp dport 22 accept
+    # log prefix "sas-m0-drop "
+    counter drop
+  }
+
+  chain forward {
+    type filter hook forward priority filter; policy drop;
+  }
+
+  chain output {
+    type filter hook output priority filter; policy accept;
+  }
+}

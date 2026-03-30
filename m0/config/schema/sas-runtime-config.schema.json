@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://super-ainux.local/schema/sas-runtime-config.json",
+  "title": "SAS runtime config (non-secret)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["config_version", "operator", "supervisor"],
+  "properties": {
+    "config_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "log_level": {
+      "type": "string",
+      "enum": ["debug", "info", "warn", "error"]
+    },
+    "operator": { "$ref": "#/$defs/llmProfile" },
+    "supervisor": { "$ref": "#/$defs/llmProfile" }
+  },
+  "$defs": {
+    "llmProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider_id", "api_base_url", "model_id"],
+      "properties": {
+        "provider_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Stable id for vendor/family (must differ between operator and supervisor per SAS spec)."
+        },
+        "api_base_url": {
+          "type": "string",
+          "pattern": "^https?://\\S+$"
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

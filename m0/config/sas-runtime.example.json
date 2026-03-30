@@ -1,0 +1,14 @@
+{
+  "config_version": 1,
+  "log_level": "info",
+  "operator": {
+    "provider_id": "vendor-a",
+    "api_base_url": "https://api.vendor-a.example/v1",
+    "model_id": "example-operator-model"
+  },
+  "supervisor": {
+    "provider_id": "vendor-b",
+    "api_base_url": "https://api.vendor-b.example/v1",
+    "model_id": "example-supervisor-model"
+  }
+}

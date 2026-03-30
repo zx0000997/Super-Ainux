@@ -1,0 +1,25 @@
+#cloud-config
+# Debian 12 VM bootstrap example — copy to your cloud provider's user-data.
+package_update: true
+package_upgrade: true
+packages:
+  - ca-certificates
+  - curl
+  - jq
+  - nftables
+  - openssh-server
+  - podman
+  - python3
+  - python3-jsonschema
+  - rsync
+  - sudo
+  - wget
+
+users:
+  - name: sasadmin
+    groups: [sudo]
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+
+runcmd:
+  - systemctl enable --now ssh

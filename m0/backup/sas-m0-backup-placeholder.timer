@@ -1,0 +1,9 @@
+[Unit]
+Description=Weekly reminder slot for SAS backup (placeholder)
+
+[Timer]
+OnCalendar=Sun *-*-* 03:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

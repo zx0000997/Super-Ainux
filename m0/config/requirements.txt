@@ -1,0 +1,2 @@
+# Optional: for validate_config.py on hosts without python3-jsonschema (apt).
+jsonschema>=4.22.0

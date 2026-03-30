@@ -1,0 +1,17 @@
+[Unit]
+Description=Super Ainux M0 stack (Podman Compose)
+Documentation=file:__INSTALL_ROOT__/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=__INSTALL_ROOT__/deploy
+# Podman 4+ prefers: podman compose
+ExecStart=/bin/bash -c 'podman compose -f compose.yaml up -d --build || podman-compose -f compose.yaml up -d --build'
+ExecStop=/bin/bash -c 'podman compose -f compose.yaml down || podman-compose -f compose.yaml down'
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

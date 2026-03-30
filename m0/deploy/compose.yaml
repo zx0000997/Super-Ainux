@@ -1,0 +1,14 @@
+# M0 placeholder stack — readiness probe only (no SAS business logic).
+# Run from this directory: podman compose up -d --build
+# (or: podman-compose up -d --build)
+
+services:
+  m0-health:
+    build:
+      context: ../services/health-nginx
+      dockerfile: Dockerfile
+    image: localhost/sas-m0-health:latest
+    container_name: sas-m0-health
+    ports:
+      - "127.0.0.1:18080:8080"
+    restart: unless-stopped

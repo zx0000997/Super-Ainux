@@ -1,0 +1,6 @@
+[Unit]
+Description=Super Ainux backup placeholder (no-op; replace in later milestone)
+
+[Service]
+Type=oneshot
+ExecStart=/bin/true

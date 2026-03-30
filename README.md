@@ -46,3 +46,7 @@ Ultimately, existing operating systems are designed for human users rather than 
 | **Application Type** | Interactive software (Human-operated) | **AI-specific programs** (API/Invocation-driven) |
 | **Resource Acquisition** | Manual installation/download by user | Automated retrieval from **Online/Local Libraries** |
 | **Security/Audit** | Permissions, Firewalls, and User Passwords | Real-time audit by the **Supervision Subsystem** |
+
+## M0 engineering (baseline host & secrets)
+
+Implementation for milestone **M0** (Linux baseline, single-node Podman Compose, split secrets/config): see [`m0/README.md`](m0/README.md) and the walkthrough [`docs/M0_DEPLOYMENT.zh.md`](docs/M0_DEPLOYMENT.zh.md).
